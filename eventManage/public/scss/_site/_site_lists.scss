@@ -1,0 +1,50 @@
+
+
+.list-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include clearfix;
+    
+    > li {
+        display: inline-block;
+        padding: 0;
+        margin: 0px;
+        margin-right: 8px;
+        
+        > a { display: block; }
+        
+        &:last-child { margin-right: 0px; }
+    }
+    
+    &.right { float: right; }
+}
+
+
+
+.list-Category-icon {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    
+    > li {
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        
+        > a {
+            font-family: 'maximus-icons' !important;
+            display: block;
+            text-decoration: none;
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            color: $color-text-dft;
+            border-radius: 16px;
+            text-align: center;
+            
+            &.selected { color: #FFFFFF; }
+        }
+    }
+}

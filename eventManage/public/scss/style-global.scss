@@ -1,0 +1,236 @@
+
+/*------------------------------------------------------------------------------
+
+MASTER STYLESHEET
+
+Project         : 
+Version         : 1.0
+Created on      : Oct 16, 2019, 08:31:38 PM
+Last change     : Oct 16, 2019, 08:31:38 PM
+Author          : Prakasam Mathaiyan
+URL             :
+Email           : hello@prakas.am
+For             : 
+
+
+--------------------------------------------------------------------------------
+[IMPORTS]                                                                     */
+
+@import "_constructor.scss";
+@import "_mixins.scss";
+@import "_site/_site_lists.scss";
+
+/*------------------------------------------------------------------------------
+BASCIC ELEMENTS                                                               */
+
+
+
+* { outline: none !important; }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #000000;
+}
+
+
+body {
+    font-family: $font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+
+    &.modal-opened { overflow: hidden; }
+}
+
+.app {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    @include clearfix;
+    
+    &.theme-light {
+        background-color: #F0F3F4;
+        color: $color-text-dft;
+    }
+    
+    &.theme-dark {
+        background-color: #212121;
+        color: #C4C4C4;
+    }
+    
+}
+
+
+
+@import "_site/_site_header.scss";
+
+@import "_site/_site_menu.scss";
+
+
+
+.site-content {
+    margin-top: 48px;
+    margin-left: 320px;
+    @include transition(all 400ms cubic-bezier(.05,.74,.27,.99));
+    
+    .inner-content {
+        padding: 32px;
+    }
+}
+
+.menu-hidden { 
+    
+    .site-content { margin-left: 60px; }
+    
+}
+
+
+
+.page-title {
+    position: relative;
+    padding: 16px 0px;
+    @include clearfix;
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 0px;
+    }
+    
+    .list-links {
+        position: absolute;
+        top: calc(50% - 19px);
+        right: 15px;
+    }
+    
+}
+
+.theme-light {
+    
+    .page-title {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid rgba(206, 212, 218, .4);
+    }
+    
+}
+
+.theme-dark {
+    
+    .page-title {
+        background-color: #282727;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+    
+}
+
+
+
+
+
+
+
+
+.site-right-sidebar {
+    position: fixed;
+    width: 280px;
+    top: 0px;
+    right: -280px;
+    bottom: 0px;
+    padding: 60px;
+    z-index: 100;
+    background-color: #FFFFFF;
+    @include transition(all 400ms cubic-bezier(.05,.74,.27,.99));
+    
+    &.show {
+        right: 0px;
+        @include box-shadow(0px 0px 16px rgba(0, 0, 0, 0.2));
+    }
+}
+
+.theme-switcher {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    margin-bottom: 0px;
+    z-index: 0;
+    
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 34px;
+        background-color: #CCCCCC;
+        -webkit-transition: .2s;
+        transition: .2s;
+        z-index: 12;
+        
+        &:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            border-radius: 50%;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        &:after {
+            position: absolute;
+            right: 5px;
+            top: 3px;
+            font-size: 14px;
+            display: inline-block;
+            font-family:Material-Design-Iconic-Font;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: '\f36c';
+            z-index: 10;
+        }
+    }
+    
+    input:checked + .slider {
+        background-color: $color-secondary-dft;
+        
+        &:after {
+            position: absolute;
+            color: #FFFFFF;
+            left: 3px;
+            top: 2px;
+            font-size: 14px;
+            content: '\f36d';
+        }
+    }
+    
+    input:focus + .slider { box-shadow: 0 0 1px $color-secondary-dft; }
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(18px);
+        -ms-transform: translateX(18px);
+        transform: translateX(18px);
+    }
+    
+}
+
+
+
+
+
+
+@import "_site/_site_loin.scss";

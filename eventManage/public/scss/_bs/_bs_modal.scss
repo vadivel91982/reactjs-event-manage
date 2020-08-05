@@ -1,0 +1,72 @@
+
+/*------------------------------------------------------------------------------
+
+Modal                                                                         */
+
+
+
+.modal-content {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: $border-radious-sm;
+    box-shadow: 0 19px 38px rgba(0,0,0,.3), 0 15px 12px rgba(0,0,0,.22);
+}
+
+.modal-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: $border-radious-sm;
+    border-top-right-radius: $border-radious-sm;
+}
+
+.modal-title {
+    line-height: 1.5;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.modal-footer {
+     padding: 0.5rem 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: $border-radious-sm;
+    border-bottom-left-radius: $border-radious-sm;
+}
+
+
+ 
+.modal-primary,
+.modal-secondary,
+.modal-success,
+.modal-info,
+.modal-warning,
+.modal-danger,
+.modal-inverse {
+    
+    .modal-header{
+        border-bottom: none;
+        
+        .modal-title {
+            color: #FFFFFF;
+        }
+        
+        .close { color: #FFFFFF; }
+        
+        a[data-dismiss="modal-flot"]{ color: rgba(255, 255, 255, 0.6); }
+        a[data-dismiss="modal-flot"]:focus,
+        a[data-dismiss="modal-flot"]:hover{ color: rgba(255, 255, 255, 1); }
+        
+    }
+}
+
+.modal-primary .modal-header { background: $color-primary-dft; }
+.modal-secondary .modal-header { background: $color-secondary-dft; }
+.modal-success .modal-header { background: $color-success-dft; }
+.modal-info .modal-header { background: $color-info-dft; }
+.modal-warning .modal-header { background: $color-warning-dft; }
+.modal-danger .modal-header { background: $color-danger-dft; }
+.modal-inverse .modal-header { background: $color-inverse-dft; }
+
+
+
+

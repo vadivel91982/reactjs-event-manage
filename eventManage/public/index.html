@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="%PUBLIC_URL%/">
+  <title>Event Management</title>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/images/favicon.png" type="image/png">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="author" content="Prakasam Mathaiyan">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/style-lib.css" />
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/style-global.css" />
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="text/javascript" src="%PUBLIC_URL%/plugins/jquery.plugins.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/plugins/jquery.datatable.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/js/jquery.main.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/js/jquery.pages.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      Categories.init();
+    });
+    jQuery(document).ready(function () {
+      EndUsser.init();
+    });
+  </script>
+</body>
+
+</html>

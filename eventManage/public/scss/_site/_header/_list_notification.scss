@@ -1,0 +1,166 @@
+
+.list-notifications {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        > a {
+            display: block;
+            position: relative;
+            padding: 12px;
+            padding-left: 60px;
+            
+            &:hover { text-decoration: none; }
+            
+            > i,
+            > img {
+                width: 38px;
+                height: 38px;
+                position: absolute;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                border-radius: 50%;
+                top: calc(50% - 19px);
+                left: 12px;
+                background-color: rgba(0, 0, 0, 0.08);
+                text-align: center;
+                line-height: 38px;
+                color: $color-text-drk;
+                font-weight: 700;
+            }
+            
+            > .noti-sender {
+                display: block;
+                font-weight: 500;
+                font-size: 14px;
+            }
+            
+            > .noti-subject {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 14px;
+            }
+            
+            > .progress {
+                height: 6px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+            
+            > .noti-time {
+                display: block;
+                font-size: 12px;
+            }
+            
+        }
+        
+        
+        &.success {
+            
+            a > i,
+            a > img {
+                color: #FFFFFF !important;
+                background-color: $color-success-dft !important;
+            }
+            
+        }
+        
+        &.info {
+            
+            a > i,
+            a > img {
+                color: #FFFFFF !important;
+                background-color: $color-info-dft !important;
+            }
+            
+        }
+        
+        &.warning {
+            
+            a > i,
+            a > img {
+                color: #FFFFFF !important;
+                background-color: $color-warning-dft !important;
+            }
+            
+        }
+        
+        &.danger {
+            
+            a > i,
+            a > img {
+                color: #FFFFFF !important;
+                background-color: $color-danger-dft !important;
+            }
+            
+        }
+        
+    }
+}
+
+
+.theme-light {
+    
+    .list-notifications {
+
+        > li {
+            
+            > a {
+                color: $color-text-dft;
+                border-bottom: 1px solid $color-border-lit;
+                
+                &:hover { background-color: rgba(0, 0, 0, 0.05); }
+
+                > i,
+                > img {
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    background-color: rgba(0, 0, 0, 0.08);
+                    color: $color-text-drk;
+                }
+
+                > .noti-sender { color: $color-text-drk; }
+                > .noti-subject { color: $color-text-lit; }
+                > .noti-time { color: $color-text-xlt; }
+
+            }
+
+        }
+    }
+    
+}
+
+.theme-dark {
+    
+    .list-notifications {
+
+        > li {
+            
+            > a {
+                color: rgba(255, 255, 255, 0.7);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                
+                &:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+                > i,
+                > img {
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    background-color: rgba(255, 255, 255, 0.08);
+                    color: #FFFFFF;
+                }
+
+                > .noti-sender { color: rgba(255, 255, 255, 0.95); }
+                > .noti-subject { color: rgba(255, 255, 255, 0.7); }
+                > .noti-time { color: rgba(255, 255, 255, 0.3); }
+
+            }
+
+        }
+    }
+    
+}

@@ -1,0 +1,151 @@
+
+
+
+/*------------------------------------------------------------------------------
+
+Background colors                                                             */
+
+.bg-primary { background-color: $color-primary-dft !important; }
+
+a.bg-primary {
+    &:hover, &:focus { background-color: $color-primary-drk !important; }
+}
+
+button.bg-primary {
+    &:hover, &:focus { background-color: $color-primary-drk !important; }
+}
+
+
+
+.bg-secondary { background-color: $color-secondary-dft !important; }
+
+a.bg-secondary {
+    &:hover, &:focus { background-color: $color-secondary-drk !important; }
+}
+
+button.bg-secondary {
+    &:hover, &:focus { background-color: $color-secondary-drk !important; }
+}
+
+
+
+.bg-success { background-color: $color-success-dft !important; }
+
+a.bg-success {
+    &:hover, &:focus { background-color: $color-success-drk !important; }
+}
+
+button.bg-success {
+    &:hover, &:focus { background-color: $color-success-drk !important; }
+}
+
+
+
+.bg-info { background-color: $color-info-dft !important; }
+
+a.bg-info {
+    &:hover, &:focus { background-color: $color-info-drk !important; }
+}
+
+button.bg-info {
+    &:hover, &:focus {background-color: $color-info-drk !important; }
+}
+
+
+
+.bg-warning { background-color: $color-warning-dft !important; }
+
+a.bg-warning {
+    &:hover, &:focus { background-color: $color-warning-drk !important; }
+}
+
+button.bg-warning {
+    &:hover, &:focus { background-color: $color-warning-drk !important; }
+}
+
+
+
+.bg-danger { background-color: $color-danger-dft !important; }
+
+a.bg-danger {
+    &:hover, &:focus { background-color: $color-danger-drk !important; }
+}
+
+button.bg-danger {
+    &:hover, &:focus { background-color: $color-danger-drk !important; }
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+
+Text colors                                                                   */
+
+.text-primary { color: $color-primary-dft !important; }
+
+a.text-primary {
+    &:hover, &:focus { color: $color-primary-drk !important; }
+}
+
+
+.text-secondary { color: $color-secondary-dft !important; }
+
+a.text-secondary {
+    &:hover, &:focus { color: $color-secondary-drk !important; }
+}
+
+
+.text-success { color: $color-success-dft !important; }
+
+a.text-success {
+    &:hover, &:focus { color: $color-success-drk !important; }
+}
+
+
+.text-info { color: $color-info-dft !important; }
+
+a.text-info {
+    &:hover, &:focus { color: $color-info-drk !important; }
+}
+
+
+.text-warning { color: $color-warning-dft !important; }
+
+a.text-warning {
+    &:hover, &:focus { color: $color-warning-drk !important; }
+}
+
+
+.text-danger { color: $color-danger-dft !important; }
+
+a.text-danger {
+    &:hover, &:focus { color: $color-danger-drk !important; }
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+
+Align                                                                         */
+
+.valign-middle {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+
+
+
+

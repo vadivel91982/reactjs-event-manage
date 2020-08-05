@@ -1,0 +1,366 @@
+
+
+.list-header-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    
+    > li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        
+        > a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: rgba(255,255,255,1);
+            line-height: 48px;
+            padding: 0px 12px;
+            
+            &:hover { color: rgba(255, 255, 255, 1); }
+            
+            i {
+                font-size: 22px;
+                vertical-align: middle;
+            }
+            
+        }
+        
+    }
+
+    &.links-right { float: right; }
+    
+}
+
+@import "_header/_list_notification.scss";
+
+.site-header {
+    position: fixed;
+    border: none;
+    border-radius: 0px;
+    padding: 0;
+    margin: 0;
+    padding-left: 320px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    min-height: 40px;
+    -webkit-backface-visibility: hidden;
+    @include box-shadow(0 2px 2px rgba(0,0,0,0.05), 0 1px 0 rgba(0,0,0,0.05));
+    @include transition(all 400ms cubic-bezier(.05,.74,.27,.99));
+    
+    .navbar-inner {
+        position: relative;
+        padding-left: 0px;
+        z-index: 1000;
+        @include clearfix;
+    }
+    
+    .link-main-menu {
+        
+        img {
+            width: 24px;
+            vertical-align: middle;
+        }
+        
+        i { @include transform( rotate(180deg) ); }
+    } 
+    
+    .logo > a {
+        width: 180px;
+
+        > img { height: 24px; }
+    } 
+    
+    .notification {
+
+        .dropdown-toggle { &::after { display: none; } }
+
+        i.badge {
+            width: 8px;
+            height: 8px;
+            display: block;
+            position: absolute;
+            padding: 0;
+            border-radius: 5px;
+            top: 12px;
+            right: 10px;
+        }
+
+        .dropdown-menu {
+            padding: 0px;
+            width: 320px;
+            border-radius: $px-xs;
+
+            .notification-header {
+                position: relative;
+                padding: 0px 8px;
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 48px;
+                margin-bottom: 0px;
+                border-top-left-radius: $px-sm;
+                border-top-right-radius: $px-sm;
+                @include clearfix;
+
+                a.action {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    line-height: 40px;
+                    color: #FFFFFF;
+                    font-size: 1rem;
+                    padding: 0px 8px;
+                    cursor: pointer;
+                    @include transition(all 0.2s ease-in-out);
+
+                    &:hover { font-size: 1.5rem; }
+                }
+            }
+            
+            .notification-footer {
+                position: relative;
+                padding: 0px 8px;
+                text-transform: uppercase;
+                border-bottom-left-radius: $px-sm;
+                border-bottom-right-radius: $px-sm;
+                font-size: 0.8rem;
+                text-align: center;
+                
+                > a {
+                    line-height: 38px;
+                    font-weight: 700;
+                    display: block;
+                    @include transition(all 0.2s ease-in-out);
+                    
+                    &:hover {
+                        text-decoration: none;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    .profile-info > a {
+        
+        > .user-status {
+            position: absolute;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color-text-xlt;
+            border: solid 2px $color-primary-dft;
+            
+            &.online { background-color: #0FE340 !important; }
+            &.offline { background-color: #E60014 !important; }
+            &.away { background-color: #FAEC22 !important; }
+        }
+
+        > img { 
+            height: 28px;
+            width: 28px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        > span { 
+            vertical-align: middle;
+            line-height: 14px;
+            display: inline-block;
+
+            small {
+                display: block;
+            }
+        }
+
+    }
+    
+    
+    &.scroll-hide.closed { top: -40px; }
+    
+    &:hover { top: 0px !important; }
+    
+    
+    &.primary, &.secondary, &.success,
+    &.info, &.warning, &.danger {
+        
+        .list-header-links {
+            > li {
+                > a {
+                    color: rgba(255, 255, 255, 0.7);
+
+                    &:hover { color: rgba(255, 255, 255, 0.95); }
+                }
+            }
+        }
+        
+    }
+    
+    &.primary {
+        .navbar-inner {
+            background-color: $color-primary-dft;
+            
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-primary-dft; }
+            }
+        }
+    }
+    
+    &.secondary {
+        .navbar-inner {
+            background-color: $color-secondary-dft;
+            
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-secondary-dft; }
+            }
+        }
+    }
+    
+    &.success {
+        .navbar-inner {
+            background-color: $color-success-dft;
+            
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-success-dft; }
+            }
+        }
+    }
+    
+    &.info {
+        .navbar-inner {
+            background-color: $color-info-dft;
+
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-info-dft; }
+            }
+        }
+    }
+    
+    &.warning {
+        .navbar-inner {
+            background-color: $color-warning-dft;
+
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-warning-dft; }
+            }
+        }
+    }
+    
+    &.danger {
+        .navbar-inner {
+            background-color: $color-danger-dft;
+            
+            .profile-info > a {
+                > .user-status { border: solid 2px $color-danger-dft; }
+            }
+        }
+    }
+    
+}
+
+.menu-hidden { .site-header { padding-left: 60px; } }
+
+
+.theme-light {
+    
+    .site-header {
+        
+        &.default {
+            .navbar-inner {
+                background-color: #FFFFFF;
+
+                .list-header-links {
+                    > li {
+                        > a {
+                            color: $color-text-dft;
+
+                            &:hover { color: $color-text-drk; }
+                        }
+                    }
+                }
+                
+                .profile-info > a {
+                    > .user-status { border: solid 2px #FFFFFF; }
+                }
+
+            }
+        }
+        
+        .notification {
+
+            .dropdown-menu {
+                
+                .notification-header {
+                    color: $color-text-dft;
+                    background-color: $color-border-lit;
+                }
+
+                .notification-footer {
+
+                    > a { color: $color-primary-dft; }
+                }
+
+            }
+        }
+        
+    }
+    
+}
+
+
+.theme-dark {
+    
+    .site-header {
+        
+        &.default {
+            .navbar-inner {
+                background-color: #282727;
+
+                .list-header-links {
+                    > li {
+                        > a {
+                            color: rgba(255, 255, 255, 0.7);
+
+                            &:hover { color: rgba(255, 255, 255, 0.95); }
+                        }
+                    }
+                }
+                
+                .profile-info > a {
+                    > .user-status { border: solid 2px #282727; }
+                }
+
+            }
+        }
+        
+        .notification {
+
+            .dropdown-menu {
+                
+                .notification-header {
+                    color: #FFFFFF;
+                    background-color: #343434;
+                }
+
+                .notification-footer {
+                    > a { color: $color-secondary-dft; }
+                }
+
+            }
+        }
+        
+    }
+    
+}
+
+
+
+@import "_header/_search.scss";

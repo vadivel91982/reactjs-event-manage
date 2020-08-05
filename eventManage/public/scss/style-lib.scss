@@ -1,0 +1,48 @@
+
+/*--------------------------------------------------------------------------------
+
+LIBRARIES STYLESHEET
+
+Project         : netCare
+Version         : 1.0
+Created on      : May 12, 2020, 07:07:19 PM
+Last change     : 
+Author          : Prakasam Mathaiyan
+URL             : http://prakas.am/
+Email           : hello@prakas.am
+For             : Janus Technologies
+
+
+----------------------------------------------------------------------------------
+[IMPORTS]                                                                       */
+
+@import "_constructor.scss";
+@import "_mixins.scss";
+@import "../plugins/web-fonts/_fonts.scss";
+@import "../plugins/web-fonts/_zmdi.scss";
+@import "../plugins/web-fonts/_maximus.scss";
+
+
+/*--------------------------------------------------------------------------------
+[BOOTSSSTRAP]                                                                   */
+
+@import "_bs/_bs.scss";
+
+@import "_bs/_bs_alerts.scss";
+@import "_bs/_bs_buttons.scss";
+@import "_bs/_bs_cards.scss";
+@import "_bs/_bs_forms.scss";
+@import "_bs/_bs_general.scss";
+@import "_bs/_bs_modal.scss";
+@import "_bs/_bs_others.scss";
+@import "_bs/_bs_tables.scss";
+@import "_bs/_bs_xteras.scss";
+
+
+
+
+/*--------------------------------------------------------------------------------
+[OTHERS]                                                                        */
+
+@import "_lib/_lib_animation.scss";
+@import "_lib/_lib_float_modal.scss";

@@ -1,0 +1,100 @@
+
+$all: all .3s ease-in-out;
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@mixin box-shadow($box-shadow...) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    -ms-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin bg-blur($bg-blur...) {
+    -webkit-filter: blur($bg-blur);
+    -moz-filter: blur($bg-blur);
+    -ms-filter: blur($bg-blur);
+    filter: blur($bg-blur);
+}
+
+@mixin rgba-background($hexcolor, $opacity) {
+    background-color: $hexcolor;
+    background-color: rgba($hexcolor, $opacity); 
+}
+
+@mixin linear-gradient($left, $right){
+    background: $left;
+    background: linear-gradient(to right,  $left 0%,$right 100%);
+    background: -ms-linear-gradient(left,  $left 0%,$right 100%);
+    background: -moz-linear-gradient(left,  $left 0%, $right 100%);
+    background: -webkit-linear-gradient(left,  $left 0%,$right 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$left), color-stop(100%,$right));
+}
+
+@mixin background-img-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display-valign-middle  {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+@mixin flex($flex...) {
+    -webkit-box-flex: $flex;
+    -webkit-flex: $flex;
+    -ms-flex: $flex;
+    flex: $flex;
+}
+
+@mixin clearfix {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+
+
+
+
+
