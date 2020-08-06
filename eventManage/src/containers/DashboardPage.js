@@ -1,52 +1,52 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../actions/index';
 import Spinner from '../components/UI/Spinner/Spinner';
 
 const DashboardPage = (props) => {
     const [loadingList, setLoadingList] = useState(false);
     const [filtered, setFiltered] = useState([]);
-    const { onListCategory } = props;
 
-    const getAllCategory = async (onListCategory) => {
-        await onListCategory();
+    const eventList = useSelector(state => state.category);
+    const { loading, categoryList } = eventList;
+
+    const dispatch = useDispatch();
+
+    const setFilter = (categoryList) => {
+        setFiltered(categoryList);
         setLoadingList(true);
     }
-    const setFilter = (props) => {
-        setFiltered(props.categoriesList)
-    }
 
     useEffect(() => {
-        setFilter(props);
-    }, [props])
+        setFilter(categoryList);
+    }, [categoryList])
 
     useEffect(() => {
-        getAllCategory(onListCategory);
-
+        dispatch(actions.categoryList());
         return () => {
 
         };
-    }, [onListCategory]);
+    }, []);
 
     const handleChange = (e) => {
         let currentList = [];
         let newList = [];
         if (e.target.value !== "") {
-            currentList = props.categoriesList;
+            currentList = categoryList;
             newList = currentList.filter(item => {
                 const lc = item.name.toLowerCase();
                 const filter = e.target.value.toLowerCase();
                 return lc.includes(filter);
             });
         } else {
-            newList = props.categoriesList;
+            newList = categoryList;
         }
         setFiltered(newList);
     }
 
     let list = <Spinner />
-    if (!props.loading && loadingList) {
+    if (!loading && loadingList) {
         list = filtered.map((item) => {
             return <div key={item.id} className="col-md-3">
                 <div className="card">
@@ -89,16 +89,4 @@ const DashboardPage = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        categoriesList: state.category.categoryList
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onListCategory: () => dispatch(actions.categoryList())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardPage);
+export default DashboardPage;

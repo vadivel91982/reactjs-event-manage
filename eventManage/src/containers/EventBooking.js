@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions/index';
-import { checkValidity } from '../utils/valitate'
 
 const EventBooking = (props) => {
     const [inputs, setInputs] = useState({
@@ -18,15 +17,16 @@ const EventBooking = (props) => {
     const [buttonDisbled, setButtonDisbled] = useState(false);
     const [attendeeNum, setAttendeeNum] = useState('');
     const { name, email, mobile, seat, attendee } = inputs;
-    const { onListCategory } = props;
 
-    const getAllCategory = async (onListCategory) => {
-        await onListCategory();
-    }
+    const eventList = useSelector(state => state.category);
+    const { categoryList } = eventList;
+
+    const dispatch = useDispatch();
+
     const setFilter = async (props) => {
         let eventDetail = []
         const id = props.match.params.id
-        eventDetail = await props.categoriesList.filter((obj) => obj.id === parseInt(id))
+        eventDetail = await categoryList.filter((obj) => obj.id === parseInt(id))
         await setFiltered(eventDetail[0])
     }
 
@@ -35,12 +35,11 @@ const EventBooking = (props) => {
     }, [props])
 
     useEffect(() => {
-        getAllCategory(onListCategory);
-
+        dispatch(actions.categoryList());
         return () => {
 
         };
-    }, [onListCategory]);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -194,16 +193,4 @@ const EventBooking = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        categoriesList: state.category.categoryList
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onListCategory: () => dispatch(actions.categoryList())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(EventBooking);
+export default EventBooking;
